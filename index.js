@@ -10,15 +10,18 @@ app.get("/", (req, res) => {
   res.send("graphql is amazing!");
 });
 
-const root = { product: () => {
-  return {
-    "id":  1248767,
-    "name": "Widget",
-    "description": "Beautiful widget to use in the garden",
-    "price": 34.99,
-    "Soldout": false
-  }
-} };
+const root = {
+  product: () => {
+    return {
+      id: 1248767,
+      name: "Widget",
+      description: "Beautiful widget to use in the garden",
+      price: 34.99,
+      Soldout: false,
+      stores: [{ store: "Pasadena" }, { store: "Los Angeles" }],
+    };
+  },
+};
 
 app.use(
   "/",
