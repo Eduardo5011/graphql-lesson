@@ -10,6 +10,19 @@ app.get("/", (req, res) => {
   res.send("graphql is amazing!");
 });
 
+class Product {
+  constructor(id, { name, price, description, soldout, stores }) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.price = price;
+    this.soldout = soldout;
+    this.stores = stores;
+  }
+}
+
+const productDatabase = {};
+
 const root = {
   product: () => {
     return {
@@ -20,6 +33,9 @@ const root = {
       Soldout: false,
       stores: [{ store: "Pasadena" }, { store: "Los Angeles" }],
     };
+  },
+  creatProduct: ({ input }) => {
+    let id = require("crypto").randomBytes(10).toString("hex");
   },
 };
 
