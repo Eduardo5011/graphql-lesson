@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
   res.send("graphql is amazing!");
 });
 
-const root = resolvers
+const root = resolvers;
 
 app.use(
   "/",
