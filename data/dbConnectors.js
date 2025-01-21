@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 async function connectMongo() {
   try {
-    await mongoose.connect("mongodb://localhost:27017/widgets");
+    await mongoose.connect("mongodb://localhost/widgets");
     console.log("connected to MongoDB");
   } catch (error) {
     console.log("Error connecting to MongoDB", error);
@@ -20,6 +20,6 @@ const widgetSchema = new mongoose.Schema({
   stores: Array,
 });
 
-const Widgets = mongoose.model("Widgets", widgetSchema);
+const Widgets = mongoose.model("widgets", widgetSchema);
 
 export { Widgets };

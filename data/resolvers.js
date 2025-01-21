@@ -1,14 +1,12 @@
 import { Widgets } from "./dbConnectors";
 
-
-
 const resolvers = {
-  getProduct: async ({id}) =>{
+  getProduct: async ({ id }) => {
     try {
-      const product = await Widgets.findById(id)
-      return product
+      const product = await Widgets.findById(id);
+      return product;
     } catch (error) {
-      throw new Error(error)
+      throw new Error(error);
     }
   },
   createProduct: ({ input }) => {
